@@ -1,0 +1,10 @@
+uuid: ead5870f-b7bd-41a7-8ec3-bc7b6a42a157
+langcode: en
+status: true
+dependencies: {  }
+id: promo_item_smt
+label: 'Promo item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

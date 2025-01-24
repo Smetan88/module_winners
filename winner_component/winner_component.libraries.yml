@@ -1,0 +1,9 @@
+winner_component_markup_smt:
+  version: 1.x
+  css:
+    theme:
+      css/winner_component_markup_smt.css: {}
+  js:
+    js/winner_component_markup_smt.js: {}
+  dependencies:
+    - core/drupal

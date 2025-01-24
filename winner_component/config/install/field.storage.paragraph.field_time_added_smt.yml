@@ -1,0 +1,20 @@
+uuid: 87117337-6499-49ba-a49b-282ef1eafe88
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_time_added_smt
+field_name: field_time_added_smt
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

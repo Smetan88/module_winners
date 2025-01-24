@@ -1,0 +1,23 @@
+{#
+  templates/paragraph--promo_smt.html.twig
+  Variables available:
+  - paragraph: The paragraph entity.
+#}
+
+<section class="winners">
+  <div class="section__inner">
+    <div class="winners__title">
+      {% if content.field_title_tag %}
+        {% set tag = content.field_title_tag['#items'].0.value %}
+        <{{ tag|raw }}>{{ content.field_title|raw }}</{{ tag|raw }}>
+      {% endif %}
+    </div>
+  </div>  
+  <div class="winners__inner section__inner {% for item in content.field_background_style['#items'] %} {{ item.value }} {% endfor %}">
+    <div class="winners__items">
+      {% for item in content.field_promo_item['#items'] %} 
+        {{ content.field_promo_item[loop.index0] }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+uuid: 71fcb719-f461-4c35-bafa-d295c46c22a8
+langcode: en
+status: true
+dependencies: {  }
+id: promo_smt
+label: Promo
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

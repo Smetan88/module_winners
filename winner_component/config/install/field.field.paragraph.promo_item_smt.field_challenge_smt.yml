@@ -1,0 +1,19 @@
+uuid: 26947ac5-c5e2-4932-8df9-dc30c6328726
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_challenge_smt
+    - paragraphs.paragraphs_type.promo_item_smt
+id: paragraph.promo_item_smt.field_challenge_smt
+field_name: field_challenge_smt
+entity_type: paragraph
+bundle: promo_item_smt
+label: Challenge
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

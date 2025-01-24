@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.promo_item_smt.default
+targetEntityType: paragraph
+bundle: promo_item_smt
+mode: default
+content:
+  field_title_smt:
+    label: hidden
+    type: string
+    weight: 0
+  field_field_challenge_smt:
+    label: hidden
+    type: string
+    weight: 1
+  field_field_description_smt:
+    label: hidden
+    type: text_default
+    weight: 2
+  field_field_image_smt:
+    label: hidden
+    type: entity_reference_entity_view
+    weight: 3
+  field_field_time_added_smt:
+    label: hidden
+    type: datetime_default
+    weight: 4

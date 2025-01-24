@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_background_style_smt
+field_name: field_background_style_smt
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    - 
+      value: light__bg
+      label: 'Light'
+    - 
+      value: white__bg
+      label: 'White'
+    - 
+      value: dark__bg
+      label: 'Dark'
+allow_custom: false
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: { }
+persist_with_no_fields: false
+custom_storage: false

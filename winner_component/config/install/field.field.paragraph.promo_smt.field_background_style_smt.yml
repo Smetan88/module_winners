@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - options
+id: paragraph.promo_smt.field_background_style_smt
+field_name: field_background_style_smt
+entity_type: paragraph
+bundle: promo_smt
+required: true
+default_value:
+  - value: 'Light'
+settings: { }
+config: { }

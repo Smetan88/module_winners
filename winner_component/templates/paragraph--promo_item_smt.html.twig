@@ -1,0 +1,22 @@
+{#
+  templates/paragraph--promo_item_smt.html.twig
+  Variables available:
+  - paragraph: The paragraph entity.
+#}
+
+
+<div class="winners__item {{ attributes.class|join(' ') }}">
+	<div class="winners__content">
+    <p class="winners__content-lable place-1">{{ 'The Winner'|t }}</p>
+	<p class="winners__content-lable place-2">{{ 'Second place'|t }}</p>
+	<p class="winners__content-lable place-3">{{ 'Third place'|t }}</p>
+		<h2 class="winners__content-title">{{ content.field_title }}</h2>
+		<p class="winners__content-challenge">{{ content.field_challenge }}</p>
+		<div class="winners__content-text">{{ content.field_description }}</div>
+		<p class="winners__content-time">{{ 'Added'|t }}
+			{{ content.field_time.0['#markup']|date("m/d/Y") }}</p>
+	</div>
+	<div class="winners__img">
+		{{ content.field_image }}
+	</div>
+</div>

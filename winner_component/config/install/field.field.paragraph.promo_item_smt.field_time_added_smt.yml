@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - datetime
+id: paragraph.promo_item_smt.field_time_added_smt
+field_name: field_time_added_smt
+entity_type: paragraph
+bundle: promo_item_smt
+required: false
+settings:
+  datetime_type: date
+config: { }
+default_value:
+  - value: 'now'
+    timezone: null
+    offset: null

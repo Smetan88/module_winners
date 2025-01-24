@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_promo_item_smt
+field_name: field_promo_item_smt
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+  handler: default:paragraph
+  handler_settings:
+    target_bundles:
+      promo_item: 'promo_item_smt'
+module: paragraphs
+locked: false
+cardinality: 3
+translatable: true
+indexes: { }
+persist_with_no_fields: false
+custom_storage: false

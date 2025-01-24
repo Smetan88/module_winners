@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function winner_component_preprocess_paragraph(array &$variables) {
+    if ($variables['paragraph']->bundle() === 'promo_smt') {
+      $variables['#attached']['library'][] = 'winner_component/winner_component_markup_smt';
+    }
+  }

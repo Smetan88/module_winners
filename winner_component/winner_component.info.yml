@@ -1,0 +1,7 @@
+name: 'Winner Component'
+type: module  
+description: 'Paragraph about winners for site'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - paragraphs:paragraphs

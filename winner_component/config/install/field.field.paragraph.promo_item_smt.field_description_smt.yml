@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.promo_item_smt.field_description_smt
+field_name: field_description_smt
+entity_type: paragraph
+bundle: promo_item_smt
+required: false
+settings: { }
+config: { }
+default_value: { }

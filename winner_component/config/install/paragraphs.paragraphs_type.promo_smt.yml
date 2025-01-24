@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: promo_smt
+label: 'Promo'
+description: 'Promo inner for items'
+icon: 'block-default'
+new_revision: true
+third_party_settings: []

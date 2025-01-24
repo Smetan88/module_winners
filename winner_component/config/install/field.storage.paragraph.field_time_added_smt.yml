@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - datetime
+id: paragraph.inner.field_time_added_smt
+field_name: field_time_added_smt
+entity_type: paragraph
+bundle: inner
+required: false
+settings: { }
+config: { }
+default_value: { }

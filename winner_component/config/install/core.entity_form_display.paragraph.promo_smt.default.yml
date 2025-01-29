@@ -1,0 +1,52 @@
+uuid: da86e55e-0845-4628-b814-d0c0e8571ad6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.promo_smt.field_background_style_smt
+    - field.field.paragraph.promo_smt.field_promo_item_smt
+    - field.field.paragraph.promo_smt.field_title_smt
+    - field.field.paragraph.promo_smt.field_title_tag_smt
+    - paragraphs.paragraphs_type.promo_smt
+  module:
+    - paragraphs
+id: paragraph.promo_smt.default
+targetEntityType: paragraph
+bundle: promo_smt
+mode: default
+content:
+  field_background_style_smt:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_promo_item_smt:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_title_smt:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_tag_smt:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

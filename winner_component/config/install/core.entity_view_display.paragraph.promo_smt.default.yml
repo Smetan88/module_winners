@@ -1,0 +1,50 @@
+uuid: 64e5ca26-4e69-4ad4-a3bd-22d1699df649
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.promo_smt.field_background_style_smt
+    - field.field.paragraph.promo_smt.field_promo_item_smt
+    - field.field.paragraph.promo_smt.field_title_smt
+    - field.field.paragraph.promo_smt.field_title_tag_smt
+    - paragraphs.paragraphs_type.promo_smt
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.promo_smt.default
+targetEntityType: paragraph
+bundle: promo_smt
+mode: default
+content:
+  field_background_style_smt:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_promo_item_smt:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title_smt:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title_tag_smt:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: 0fe9d212-89f0-4096-971e-1ae1ce22feeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_smt
+    - paragraphs.paragraphs_type.promo_smt
+id: paragraph.promo_smt.field_title_smt
+field_name: field_title_smt
+entity_type: paragraph
+bundle: promo_smt
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

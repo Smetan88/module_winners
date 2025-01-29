@@ -1,0 +1,29 @@
+uuid: c029c08a-21cc-494f-8ffc-48f8c99e21a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_smt
+    - media.type.image
+    - paragraphs.paragraphs_type.promo_item_smt
+id: paragraph.promo_item_smt.field_image_smt
+field_name: field_image_smt
+entity_type: paragraph
+bundle: promo_item_smt
+label: Image
+description: "First - 16/9\r\nOther - 4/3"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: 874d8a46-181b-4f6f-b7e6-e5d4f820082f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description_smt
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.promo_item_smt
+  module:
+    - text
+id: paragraph.promo_item_smt.field_description_smt
+field_name: field_description_smt
+entity_type: paragraph
+bundle: promo_item_smt
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

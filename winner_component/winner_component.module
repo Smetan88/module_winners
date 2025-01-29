@@ -1,0 +1,114 @@
+<?php
+
+$settings['twig_debug'] = TRUE;
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+$settings['cache']['bins']['page'] = 'cache.backend.null';
+
+
+
+
+
+/**
+ * Implements hook_theme().
+ */
+function winner_component_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__promo_smt' => [
+      'render element' => 'elements',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__promo_item_smt' => [
+      'render element' => 'elements',
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for paragraphs.
+ */
+function winner_component_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  if ($paragraph = $variables['elements']['#paragraph']) {
+    $paragraph_type = $paragraph->bundle();
+    $custom_paragraphs = ['promo_smt', 'promo_item_smt'];
+
+    // Log theme suggestions for debugging.
+    \Drupal::logger('winner_component')->info('Paragraph type: @type', ['@type' => $paragraph_type]);
+
+    if (in_array($paragraph_type, $custom_paragraphs, TRUE)) {
+      $suggestions[] = 'paragraph__' . $paragraph_type;
+      \Drupal::logger('winner_component')->info('Theme suggestion added: paragraph__@type', ['@type' => $paragraph_type]);
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraphs.
+ */
+function winner_component_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $paragraph_type = $paragraph->bundle();
+
+  if (in_array($paragraph_type, ['promo_smt', 'promo_item_smt'], TRUE)) {
+    $variables['theme_hook_suggestions'][] = 'paragraph__' . $paragraph_type;
+  }
+
+  if ($variables['paragraph']->bundle() === 'promo_smt') {
+    $variables['#attached']['library'][] = 'winner_component/winner_component_markup_smt';
+    foreach ($variables['content'] as $field_name => $field) {
+      if (is_array($field) && isset($field['#theme_wrappers'])) {
+        $variables['content'][$field_name]['#theme_wrappers'] = [];
+      }
+    }
+  }
+  if ($variables['paragraph']->bundle() === 'promo_item_smt') {
+    $variables['#attached']['library'][] = 'winner_component/winner_component_markup_smt';
+    foreach ($variables['content'] as $field_name => $field) {
+      if (is_array($field) && isset($field['#theme_wrappers'])) {
+        $variables['content'][$field_name]['#theme_wrappers'] = [];
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function winner_component_preprocess_field(array &$variables) {
+  // Target only 'field_image_smt' field.
+  if ($variables['element']['#field_name'] === 'field_image_smt') {
+    foreach ($variables['items'] as &$item) {
+      // Extract the image URL and alt attribute.
+      $file = $item['#item']->entity;
+      $uri = $file->getFileUri();
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+      $alt = $file->get('field_media_image')->alt ?? '';
+      $item['content'] = [
+        '#markup' => '<img src="' . $url . '" alt="' . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . '">',
+      ];
+    }
+  }
+    $field_name = $variables['element']['#field_name'];
+    $entity_type = $variables['element']['#entity_type'];
+    $bundle = $variables['element']['#bundle'];
+    $fields_to_remove_wrappers = [
+      'field_title_smt',
+      'field_title_tag_smt',
+      'field_promo_item_smt',
+      'field_background_style_smt',
+      'field_challenge_smt',
+      'field_description_smt',
+      'field_image_smt',
+      'field_time_added_smt',
+    ];
+  
+    if (in_array($field_name, $fields_to_remove_wrappers, TRUE)) {
+      $variables['attributes'] = [];
+      $variables['content_attributes'] = [];
+      $variables['label_attributes'] = [];
+    }
+}

@@ -1,0 +1,20 @@
+<div class="winners__item">
+	<div class="winners__content">
+    <p class="winners__content-lable place-1">{{ 'The Winner'|t }}</p>
+	<p class="winners__content-lable place-2">{{ 'Second place'|t }}</p>
+	<p class="winners__content-lable place-3">{{ 'Third place'|t }}</p>
+		<h2 class="winners__content-title">{{ content.field_title_smt }}</h2>
+		<div class="winners__content-challenge">{{ content.field_challenge_smt }}</div>
+		<div class="winners__content-text">{{ content.field_description_smt }}</div>
+		<p class="winners__content-time">{{ 'Added'|t }}
+			{{ content.field_time_smt.0['#markup']|date("m/d/Y") }}</p>
+	</div>
+	<div class="winners__img">
+		{% for item in content.field_image_smt['#items'] %}
+    		{% set media = item.entity %}
+    		{% if media and media.field_media_image.entity is not null %}
+      			<img src="{{ file_url(media.field_media_image.entity.uri.value) }}" alt="{{ media.field_media_image.alt }}" />
+    		{% endif %}
+  		{% endfor %}
+	</div>
+</div>

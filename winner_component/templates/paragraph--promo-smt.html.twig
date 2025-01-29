@@ -1,0 +1,17 @@
+<section class="winners">
+  <div class="section__inner">
+    <div class="winners__title">
+      {% if content.field_title_tag_smt %}
+        {% set tag = content.field_title_tag_smt['#items'].0.value %}
+        <{{ tag|raw }}>{{ content.field_title_smt|raw }}</{{ tag|raw }}>
+      {% endif %}
+    </div>
+  </div>  
+  <div class="winners__inner section__inner {% for item in content.field_background_style_smt['#items'] %} {{ item.value }} {% endfor %}">
+    <div class="winners__items">
+      {% for item in content.field_promo_item_smt['#items'] %} 
+        {{ content.field_promo_item_smt[loop.index0] }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
